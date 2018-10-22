@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import com.caveman.listcheckbox.R;
 import com.caveman.listcheckbox.bean.Node;
 import com.caveman.listcheckbox.helper.TreeHelper;
 import com.caveman.listcheckbox.listener.OnTreeNodeClickListener;
@@ -104,7 +105,7 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
      * @param defaultExpandLevel 默认展开几级树
      */
     public TreeListViewAdapter(ListView listView, Context context, List<Node> datas, int defaultExpandLevel) {
-        this(listView, context, datas, defaultExpandLevel, -1, -1);
+        this(listView, context, datas, defaultExpandLevel, R.drawable.ic_check, R.drawable.ic_nor);
     }
 
     /**

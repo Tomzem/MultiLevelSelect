@@ -105,7 +105,7 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
      * @param defaultExpandLevel 默认展开几级树
      */
     public TreeListViewAdapter(ListView listView, Context context, List<Node> datas, int defaultExpandLevel) {
-        this(listView, context, datas, defaultExpandLevel, R.drawable.ic_check, R.drawable.ic_nor);
+        this(listView, context, datas, defaultExpandLevel, R.drawable.zoomin_yzs, R.drawable.zoomout_yzs);
     }
 
     /**

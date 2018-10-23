@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.caveman.listcheckbox.adapter.ListViewAdapter;
+import com.caveman.listcheckbox.bean.Node;
 import com.caveman.listcheckbox.listener.OnTreeNodeCheckedChangeListener;
 
 import java.util.ArrayList;
@@ -26,17 +27,21 @@ public class MainActivity extends AppCompatActivity {
 
         mLvMultiSelect = findViewById(R.id.lv_select);
         mItems = new ArrayList<>();
-        initData();
-        mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0,
-                R.drawable.ic_check, R.drawable.ic_nor);
+        mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
+        mLvMultiSelect.setAdapter(mAdapter);
 
         mAdapter.setCheckedChangeListener(new OnTreeNodeCheckedChangeListener() {
             @Override
             public void onCheckChange(String id, String name, int position, boolean isChecked) {
                 Log.d(TAG, "onCheckChange: " + name);
+                List<Node> selectedNode = mAdapter.getSelectedNode();
+                for (Node node : selectedNode){
+                    Log.d(TAG, "selectedNode: " + node.getId());
+                }
             }
         });
 
+        initData();
     }
 
     private void initData() {
@@ -52,5 +57,6 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Item(7, 1, "菜单2-1"));
 
         mItems.addAll(items);
+        mAdapter.addData(mItems);
     }
 }

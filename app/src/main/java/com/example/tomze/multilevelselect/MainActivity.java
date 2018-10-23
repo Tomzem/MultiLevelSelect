@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         initData();
 
         mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
+
         mLvMultiSelect.setAdapter(mAdapter);
 
         mAdapter.setCheckedChangeListener(new OnTreeNodeCheckedChangeListener() {

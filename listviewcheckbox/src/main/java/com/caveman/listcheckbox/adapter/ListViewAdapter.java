@@ -29,6 +29,13 @@ public class ListViewAdapter<T> extends TreeListViewAdapter {
         this.checkedChangeListener = checkedChangeListener;
     }
 
+    /**
+     *
+     * @param listView
+     * @param context
+     * @param datas 数据源
+     * @param defaultExpandLevel 默认开启级别
+     */
     public ListViewAdapter(ListView listView, Context context, List<T> datas, int defaultExpandLevel){
         super(listView, context, ListUtils.getInstance().toListObject(datas), defaultExpandLevel);
     }
@@ -37,6 +44,16 @@ public class ListViewAdapter<T> extends TreeListViewAdapter {
         super(listView, context, ListUtils.getInstance().toListObject(datas), defaultExpandLevel, iconExpand, iconNoExpand);
     }
 
+    /**
+     *
+     * @param listView
+     * @param context
+     * @param datas 数据源
+     * @param defaultExpandLevel 默认开启级别
+     * @param layoutItem item布局
+     * @param iconExpand 收缩
+     * @param iconNoExpand 展开
+     */
     public ListViewAdapter(ListView listView, Context context, List<T> datas, int defaultExpandLevel,int layoutItem, int iconExpand, int iconNoExpand) {
         super(listView, context, ListUtils.getInstance().toListObject(datas), defaultExpandLevel, iconExpand, iconNoExpand);
         this.layoutItem = layoutItem;

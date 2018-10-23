@@ -9,7 +9,9 @@ import com.caveman.listcheckbox.adapter.ListViewAdapter;
 import com.caveman.listcheckbox.bean.Node;
 import com.caveman.listcheckbox.listener.OnTreeNodeCheckedChangeListener;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mLvMultiSelect = findViewById(R.id.lv_select);
+
         mItems = new ArrayList<>();
+        initData();
+
         mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
         mLvMultiSelect.setAdapter(mAdapter);
 
@@ -41,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        initData();
     }
 
     private void initData() {
@@ -54,9 +58,19 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Item(4, 0, "菜单1-1"));
         items.add(new Item(5, 0, "菜单1-2"));
         items.add(new Item(6, 0, "菜单1-3"));
+
         items.add(new Item(7, 1, "菜单2-1"));
+        items.add(new Item(8, 1, "菜单2-2"));
+        items.add(new Item(9, 1, "菜单2-3"));
+
+        items.add(new Item(10, 2, "菜单3-1"));
+        items.add(new Item(11, 2, "菜单3-2"));
+        items.add(new Item(12, 2, "菜单3-3"));
+
+        items.add(new Item(14, 3, "菜单4-1"));
+        items.add(new Item(15, 3, "菜单4-2"));
+        items.add(new Item(16, 3, "菜单4-3"));
 
         mItems.addAll(items);
-        mAdapter.addData(mItems);
     }
 }

@@ -84,14 +84,28 @@ public class ListViewAdapter<T> extends TreeListViewAdapter {
             @Override
             public void onClick(View v) {
                 setChecked(node, holder.checkBox.isChecked());
-
                 if (checkedChangeListener != null) {
                     checkedChangeListener.onCheckChange(node.getId(),node.getName(), position,holder.checkBox.isChecked());
                 }
             }
         });
 
+        if (layoutItem == R.layout.item_list){
+            //如果没又自定义UI替换选中按钮
+            if (singleCheck) {
+                holder.checkBox.setButtonDrawable(R.drawable.radiobox_style);
+            }else{
+                holder.checkBox.setButtonDrawable(R.drawable.checkbox_style);
+            }
+        }
 
+        if (singleCheck) {
+            if (node.getChildren().size() != 0) {
+                holder.checkBox.setEnabled(false);
+            } else {
+                holder.checkBox.setEnabled(true);
+            }
+        }
 
         if (node.isChecked()) {
             holder.checkBox.setChecked(true);

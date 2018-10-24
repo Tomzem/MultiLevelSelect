@@ -43,6 +43,8 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
 
     protected LayoutInflater mInflater;
 
+    protected boolean singleCheck = false;
+
     /**
      * 存储所有可见的Node
      */
@@ -168,15 +170,43 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
      */
     public List<Node> getSelectedNode() {
         List<Node> checks = new ArrayList<Node>();
-        for (int i = 0; i < mAllNodes.size(); i++) {
-            Node n = mAllNodes.get(i);
-            if (n.isChecked()) {
-                checks.add(n);
+        if (singleCheck){
+            checks.addAll(getSelectedChildNode());
+        }else{
+            for (Node n:mAllNodes) {
+                if (n.isChecked()) {
+                    checks.add(n);
+                }
             }
         }
         return checks;
     }
 
+    /**
+     *  获取所有选中子节点（不含父节点）
+     *
+     * @return
+     */
+    public List<Node> getSelectedChildNode(){
+        List<Node> checks = new ArrayList<Node>();
+        for (Node n:mAllNodes) {
+            if (n.isChecked()) {
+                if (n.getChildren().size() == 0){
+                    checks.add(n);
+                }
+            }
+        }
+        return checks;
+    }
+
+    /**
+     *  设置单选还是多选
+     *
+     * @param singleCheck
+     */
+    public void setSingleCheck(boolean singleCheck){
+        this.singleCheck = singleCheck;
+    }
 
     /**
      * 设置多选
@@ -185,8 +215,17 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
      * @param checked
      */
     protected void setChecked(final Node node, boolean checked) {
-        node.setChecked(checked);
-        setChildChecked(node, checked);
+        if (singleCheck){
+            for (Node n:mAllNodes) {
+                if (n.isChecked()) {
+                    n.setChecked(false);
+                }
+            }
+            node.setChecked(checked);
+        }else{
+            node.setChecked(checked);
+            setChildChecked(node, checked);
+        }
         if (node.getParent() != null)
             setNodeParentChecked(node.getParent(), checked);
         notifyDataSetChanged();
@@ -289,8 +328,8 @@ public abstract class TreeListViewAdapter<T> extends BaseAdapter {
      *
      * @param node
      */
-    public void addData(T node) {
-        addData(node, defaultExpandLevel);
+    public void addData(T t) {
+        addData(t, defaultExpandLevel);
     }
 
     /**

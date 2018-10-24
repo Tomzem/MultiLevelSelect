@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
         mLvMultiSelect.setAdapter(mAdapter);
-//        mAdapter.setSingleCheck(true);
+        mAdapter.setSingleCheck(true);
 
         mAdapter.setCheckedChangeListener(new OnTreeNodeCheckedChangeListener() {
             @Override
@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Item(11, 2, "菜单3-2"));
         items.add(new Item(12, 2, "菜单3-3"));
 
-//        items.add(new Item(14, 3, "菜单4-1"));
-//        items.add(new Item(15, 3, "菜单4-2"));
-//        items.add(new Item(16, 3, "菜单4-3"));
+        items.add(new Item(14, 3, "菜单4-1"));
+        items.add(new Item(15, 3, "菜单4-2"));
+        items.add(new Item(16, 3, "菜单4-3"));
 
         mItems.addAll(items);
     }

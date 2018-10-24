@@ -1,4 +1,5 @@
-# MultiLevelSelect
+# MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
+
 多级选择控件，支持：单级单选，单级多选，多级单选，多级多选等
 
 ## 使用说明
@@ -6,7 +7,7 @@
 在app/build.gradle中添加:
 ```
 dependencies {
-    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.0'
+    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.1'
 }
 ```
 还需要在Project的build.gradle中添加:

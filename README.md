@@ -1,15 +1,15 @@
 # MultiLevelSelect
-Multistage multiplexed control
+多级选择控件，支持：单级单选，单级多选，多级单选，多级多选等
 
-## How to use ?
-### Install
-Add this to your app build.gradle
+## 使用说明
+### 依赖
+在app/build.gradle中添加:
 ```
 dependencies {
     implementation 'com.github.Tomzem:MultiLevelSelect:1.0.0'
 }
 ```
-You will also need support renderscript, also in your build.gradle :
+还需要在Project的build.gradle中添加:
 ```
 allprojects {
     repositories {
@@ -18,8 +18,8 @@ allprojects {
 }
 ```
 
-## Method of Calling
-activity_main.xml：
+## 调用
+在activity_main.xml中只用写一个listView，其余什么都不需要：
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -36,21 +36,8 @@ activity_main.xml：
 
 </android.support.constraint.ConstraintLayout>
 ```
-MainActivity.class
+在java中，和正常的使用Adapter一样（默认情况多级多选）：
 ```
-public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "MainActivity";
-
-    private ListView mLvMultiSelect;
-    private ListViewAdapter mAdapter;
-    private List<Item> mItems;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         mLvMultiSelect = findViewById(R.id.lv_select);
 
         mItems = new ArrayList<>();
@@ -58,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 				
         mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
         mLvMultiSelect.setAdapter(mAdapter);
-				//点击选中监听
+	//点击选中监听
         mAdapter.setCheckedChangeListener(new OnTreeNodeCheckedChangeListener() {
             @Override
             public void onCheckChange(String id, String name, int position, boolean isChecked) {
@@ -69,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-    }
 
     private void initData() {
         List<Item> items = new ArrayList<>();
@@ -99,22 +84,5 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-## Implementation effect
+## 实际效果
 ![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181023-1451-52.png?raw=true)  
-
-## The Custom
-The first two parameters are not interpreted
-```
-/**
-     * @param listView
-     * @param context
-     * @param datas The data source
-     * @param defaultExpandLevel Default on level
-     * @param layoutItem Item custom layout
-     * @param iconExpand Contraction icon
-     * @param iconNoExpand An icon
-     */
-    public ListViewAdapter(ListView listView, Context context, List<T> datas, int defaultExpandLevel,int layoutItem, int iconExpand, int iconNoExpand) {
-    }
-```
-The last three parameters can be left unwritten by default

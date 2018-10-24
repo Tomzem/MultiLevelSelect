@@ -84,7 +84,7 @@ allprojects {
 }
 ```
 ## 实际效果
-![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181023-1451-52.png?raw=true)  ![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181023-1520-25.png?raw=true)  ![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181024-1554-42.png?raw=true)  
+![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181023-1451-52.png?raw=true)  ![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181023-1520-25.png?raw=true)  ![](https://github.com/Tomzem/MultiLevelSelect/blob/master/Image/20181024-1554-41.png?raw=true)  
 
 ## Adapter构造方法
 ```

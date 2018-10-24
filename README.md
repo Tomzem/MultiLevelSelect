@@ -6,7 +6,7 @@ Multistage multiplexed control
 Add this to your app build.gradle
 ```
 dependencies {
-    implementation 'com.github.Tomzem:MultiLevelSelect:v1.0.0'
+    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.0'
 }
 ```
 You will also need support renderscript, also in your build.gradle :

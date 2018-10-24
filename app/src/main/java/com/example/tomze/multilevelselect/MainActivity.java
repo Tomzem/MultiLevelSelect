@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new ListViewAdapter(mLvMultiSelect, this, mItems, 0);
         mLvMultiSelect.setAdapter(mAdapter);
-        mAdapter.setSingleCheck(true);
+//        mAdapter.setSingleCheck(true);
 
         mAdapter.setCheckedChangeListener(new OnTreeNodeCheckedChangeListener() {
             @Override

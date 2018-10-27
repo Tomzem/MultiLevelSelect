@@ -1,4 +1,4 @@
-# MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
+# ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
 
 🍎多级选择控件，支持：单级单选，单级多选，多级单选，多级多选等
 
@@ -19,7 +19,7 @@ allprojects {
 }
 ```
 
-## 调用
+### 调用
 在activity_main.xml中只用写一个listView，其余什么都不需要：
 ```
 <?xml version="1.0" encoding="utf-8"?>

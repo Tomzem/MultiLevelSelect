@@ -7,7 +7,7 @@
 在app/build.gradle中添加:
 ```
 dependencies {
-    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.2'
+    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.3'
 }
 ```
 还需要在Project的build.gradle中添加:

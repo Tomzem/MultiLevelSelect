@@ -120,13 +120,13 @@ ListViewAdapter(ListView listView, Context context, List<T> datas, int defaultEx
 | expandOrCollapse(int position)        |   展开或收缩第position项（父级别）  |
 	
 ## 注意事项
-1.Item当中必须要有的两个属性：
+1.Item当中必须要有的两个字段名（可以是String或Long类型）：
 ```
-   ***private int id; //当前itemID
+   ***private int id; //当前 item ID
    ***private int pid; //当前item父ID
    private String name;
 ```
-2.item需要展示的文字：
+2.item中展示的文字由toString获取：
 ```
     @Override
     public String toString() {

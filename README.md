@@ -1,4 +1,4 @@
-# MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
+# ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
 
 🍎多级选择控件，支持：单级单选，单级多选，多级单选，多级多选等
 
@@ -7,7 +7,7 @@
 在app/build.gradle中添加:
 ```
 dependencies {
-    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.1'
+    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.3'
 }
 ```
 还需要在Project的build.gradle中添加:
@@ -19,7 +19,7 @@ allprojects {
 }
 ```
 
-## 调用
+### 调用
 在activity_main.xml中只用写一个listView，其余什么都不需要：
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,13 +120,13 @@ ListViewAdapter(ListView listView, Context context, List<T> datas, int defaultEx
 | expandOrCollapse(int position)        |   展开或收缩第position项（父级别）  |
 	
 ## 注意事项
-1.Item当中必须要有的两个属性：
+1.Item当中必须要有的两个字段名（可以是String或Long类型）：
 ```
-   ***private int id; //当前itemID
+   ***private int id; //当前 item ID
    ***private int pid; //当前item父ID
    private String name;
 ```
-2.item需要展示的文字：
+2.item中展示的文字由toString获取：
 ```
     @Override
     public String toString() {

@@ -6,12 +6,11 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.caveman.listcheckbox.adapter.ListViewAdapter;
+import com.caveman.listcheckbox.bean.Item;
 import com.caveman.listcheckbox.bean.Node;
 import com.caveman.listcheckbox.listener.OnTreeNodeCheckedChangeListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,11 +1,20 @@
-package com.example.tomze.multilevelselect;
+package com.caveman.listcheckbox.bean;
 
-public class Item {
-    private int id;
-    private int pid;
+/**
+ * Created by Administrator on 2018/11/14.
+ * <p>
+ * Description:
+ */
+public class ItemLong {
+
+    private Long id;
+    private Long pid;
     private String name;
 
-    public Item(int id, int pid, String name) {
+    public ItemLong() {
+    }
+
+    public ItemLong(Long id, Long pid, String name) {
         this.id = id;
         this.pid = pid;
         this.name = name;
@@ -16,19 +25,19 @@ public class Item {
         return this.name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getPid() {
+    public Long getPid() {
         return pid;
     }
 
-    public void setPid(int pid) {
+    public void setPid(Long pid) {
         this.pid = pid;
     }
 

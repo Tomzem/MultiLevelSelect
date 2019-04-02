@@ -1,6 +1,5 @@
 package com.caveman.listcheckbox.listener;
 
-import com.caveman.listcheckbox.bean.Node;
 
 /**
  * Created by Administrator on 2018/10/22.

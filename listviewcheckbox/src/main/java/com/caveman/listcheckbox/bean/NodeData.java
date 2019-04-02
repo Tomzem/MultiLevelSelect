@@ -1,6 +1,5 @@
 package com.caveman.listcheckbox.bean;
 
-import java.util.IdentityHashMap;
 
 /**
  * Created by Administrator on 2018/10/22.

@@ -1,4 +1,6 @@
 # ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)MultiLevelSelect [![](https://jitpack.io/v/Tomzem/MultiLevelSelect.svg)](https://jitpack.io/#Tomzem/MultiLevelSelect)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![Badge](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/zh_CN)
 
 🍎多级选择控件，支持：单级单选，单级多选，多级单选，多级多选等
 
@@ -7,7 +9,7 @@
 在app/build.gradle中添加:
 ```
 dependencies {
-    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.3'
+    implementation 'com.github.Tomzem:MultiLevelSelect:1.0.4'
 }
 ```
 还需要在Project的build.gradle中添加:

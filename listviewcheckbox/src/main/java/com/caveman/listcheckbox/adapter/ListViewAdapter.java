@@ -122,9 +122,9 @@ public class ListViewAdapter<T> extends TreeListViewAdapter {
         private ImageView ivExpand;
 
         public ViewHolder(View convertView) {
-            checkBox = convertView.findViewById(R.id.cb);
-            tvName = convertView.findViewById(R.id.tv_name);
-            ivExpand = convertView.findViewById(R.id.iv_expand);
+            checkBox = (CheckBox) convertView.findViewById(R.id.cb);
+            tvName = (TextView) convertView.findViewById(R.id.tv_name);
+            ivExpand = (ImageView) convertView.findViewById(R.id.iv_expand);
         }
     }
 }

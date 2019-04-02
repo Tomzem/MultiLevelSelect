@@ -28,13 +28,15 @@ public class ListUtils<T> {
 
     public List<Node> toListObject(List<T> list){
         Gson gson = new Gson();
-        List<Node> nodes = gson.fromJson(gson.toJson(list), new TypeToken<List<Node>>(){}.getType());
+        String listJson = gson.toJson(list);
+        List<Node> nodes = gson.fromJson(listJson, new TypeToken<List<Node>>(){}.getType());
         return nodes;
     }
 
     public List<T> toListT(List<Node> nodes){
         Gson gson = new Gson();
-        List<T> t = gson.fromJson(gson.toJson(nodes), new TypeToken<List<T>>(){}.getType());
+        String nodeJson = gson.toJson(nodes);
+        List<T> t = gson.fromJson(nodeJson, new TypeToken<List<T>>(){}.getType());
         return t;
     }
 
